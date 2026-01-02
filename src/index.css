@@ -1,0 +1,176 @@
+/* Playfair Light */
+@font-face {
+  font-family: 'Playfair';
+  src: url('/fonts/Playfair/Playfair_144pt-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Playfair Regular */
+@font-face {
+  font-family: 'Playfair';
+  src: url('/fonts/Playfair/Playfair_9pt-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Playfair Display Extra Light (200) */
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('/fonts/Playfair/PlayfairDisplay-Regular.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Playfair Display Medium */
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('/fonts/Playfair/PlayfairDisplay-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Playfair Display Medium Italic */
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('/fonts/Playfair/PlayfairDisplay-MediumItalic.ttf')
+    format('truetype');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Playfair Display Bold */
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('/fonts/Playfair/PlayfairDisplay-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Inter Light */
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter/Inter_24pt-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Inter Regular */
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter/Inter_24pt-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Inter Medium */
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter/Inter_24pt-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Inter Bold */
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter/Inter_24pt-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #fff !important;
+  color: #000 !important;
+}
+
+/* inicio da shapeDiv */
+.custom-shape-divider-bottom-1720203688 {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1720203688 svg {
+  position: relative;
+  display: block;
+  width: calc(134% + 1.3px);
+  height: 78px;
+  transform: rotateY(180deg);
+}
+
+.custom-shape-divider-bottom-1720203688 .shape-fill {
+  fill: #fff;
+}
+
+/** For mobile devices **/
+@media (max-width: 767px) {
+  .custom-shape-divider-bottom-1720203688 svg {
+    width: calc(145% + 1.3px);
+    height: 41px;
+  }
+}
+/* fim da shapeDiv */
+
+.unfix-ios-bg {
+  @supports (-webkit-touch-callout: none) {
+    background-attachment: initial !important;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-10px);
+    visibility: hidden;
+  }
+}
+
+.animate-fade-in {
+  opacity: 1;
+  visibility: visible;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.animate-fade-out {
+  opacity: 1;
+  visibility: visible;
+  animation: fadeOut 1s ease-in-out;
+}
+
+.p-dialog-header {
+  padding-bottom: 0px;
+}
