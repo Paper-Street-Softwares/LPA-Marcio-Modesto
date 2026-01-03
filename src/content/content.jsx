@@ -104,7 +104,7 @@ const content = {
       ctaButtonTextResponsive: 'Contato',
     },
     hero: {
-      miniTag: 'ADVOGADO CRIMINALISTA',
+      miniTag: 'ADVOGADO CRIMINALISTA 24H',
       FirstPartTitle: 'Precisa de um Advogado',
       DestaquePartTitle: (
         <p>
@@ -347,7 +347,7 @@ const content = {
         alt: 'Imagem ilustrativa da Seção Sobre',
       },
       miniTag: 'QUEM É O DR. MÁRCIO MODESTO',
-      FirstPartTitle: 'Minha',
+      FirstPartTitle: 'Nossa',
       DestaquePartTitle: (
         <p>
           <span className="italic"> trajetória</span>{' '}
@@ -428,13 +428,13 @@ const content = {
     },
     steps: {
       miniTag: 'PASSO A PASSO',
-      FirstPartTitle: 'Como ',
+      FirstPartTitle: 'Etapas do ',
       DestaquePartTitle: (
         <p>
-          <span className="italic"> garantimos</span>{' '}
+          <span className="italic"> atendimento</span>{' '}
         </p>
       ),
-      SecondPartTitle: ' a sua defesa?',
+      SecondPartTitle: ' e da defesa jurídica',
       subtitle: '',
       img: imgSteps,
       alt: 'Imagem ilustrativa da Seção Passo a Passo',
