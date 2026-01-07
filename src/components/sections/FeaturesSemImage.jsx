@@ -164,7 +164,7 @@ function FeaturesSemImage({ colorMode }) {
                   label="Emergência? Ligue agora!"
                   colorMode={colorMode}
                   bgClass="bg-[#ff2c2c]"
-                  className="text-white"
+                  className="text-black"
                 />
               </div>
             </motion.div>

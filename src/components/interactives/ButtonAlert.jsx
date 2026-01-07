@@ -9,6 +9,7 @@ export default function ButtonAlert({
 }) {
   return (
     <a
+      aria-label="Button de contato rápido"
       target="_blank"
       rel="noopener noreferrer"
       href={link}
