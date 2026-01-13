@@ -229,7 +229,8 @@ function HeroTemplateNovo({
                       <p
                         className={`text-paragraph2 phone3:text-lg font-mainFont font-bold leading-none ${text}`}
                       >
-                        EMERGÊNCIA? LIGUE AGORA!
+                        Prisão em Flagrante, Custódia, Habeas Corpus, Busca e
+                        Apreensão, Intimações
                       </p>
                     </div>
                     <div className="ml-auto">

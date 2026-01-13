@@ -46,7 +46,11 @@ export const infos = {
   endereco: (
     <div>
       {/* <p>Endereço:</p> */}
-      <p>São Paulo - SP</p>
+      <p>
+        Atuando na ZONA SUL (Brooklin, Moema, Itaim Bibi, Santo Amaro,
+        Jabaquara, Vila Prudente, Ipiranga e demais comarcas da Zona Sul) e na
+        ZONA LESTE (Tatuapé, Mooca, Itaquera e demais regiões).
+      </p>
     </div>
   ),
   enderecoSecundario: (
@@ -104,7 +108,7 @@ const content = {
       ctaButtonTextResponsive: 'Contato',
     },
     hero: {
-      miniTag: 'ADVOGADO CRIMINALISTA 24H',
+      miniTag: 'ADVOGADO CRIMINALISTA 24H EM SÃO PAULO E REGIÃO',
       FirstPartTitle: 'Precisa de um Advogado',
       DestaquePartTitle: (
         <p>
@@ -127,7 +131,7 @@ const content = {
       obsHero: {
         icon: <LucideIdCard />,
         iconTwo: <LucideIdCard />,
-        text: 'Atendimento em regime de plantão 24h via WhatsApp',
+        text: 'Atendimento imediato para prisão em flagrante, audiência de custódia, Lei Seca, Habeas Corpus e diligências urgentes, incluindo busca e apreensão e intimações.',
         textTwo: '',
       },
       secondaryCta: 'Contato',
