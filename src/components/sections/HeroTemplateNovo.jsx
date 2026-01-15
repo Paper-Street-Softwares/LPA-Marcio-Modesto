@@ -226,14 +226,14 @@ function HeroTemplateNovo({
                         PLANTÃO 24H
                       </p>
                       <p
-                        className={`text-paragraph2 phone3:text-lg font-mainFont font-bold leading-none ${text}`}
+                        className={`text-paragraph2 phone3:text-lg font-secondFont font-medium leading-none ${text}`}
                       >
                         Prisão em Flagrante, Custódia, Habeas Corpus, Busca e
                         Apreensão, Intimações
                       </p>
                     </div>
                     <div className="ml-auto">
-                      <ButtonAlert
+                      <ButtonReflexo
                         padding="p-2 phone3:p-4"
                         icon={
                           <Phone className="w-4 h-4 tablet1:w-6 tablet1:h-6 text-white" />
