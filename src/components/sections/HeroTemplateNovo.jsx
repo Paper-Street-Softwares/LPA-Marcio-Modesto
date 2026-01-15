@@ -226,7 +226,7 @@ function HeroTemplateNovo({
                         PLANTÃO 24H
                       </p>
                       <p
-                        className={`text-paragraph2 phone3:text-lg font-secondFont font-medium text-opacity-80 leading-none ${text}`}
+                        className={`text-paragraph2 phone3:text-paragraph4 font-secondFont font-medium text-opacity-80 leading-none ${text}`}
                       >
                         Prisão em Flagrante, Custódia, Habeas Corpus, Busca e
                         Apreensão, Intimações
