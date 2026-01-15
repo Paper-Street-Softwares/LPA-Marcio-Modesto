@@ -163,8 +163,7 @@ function FeaturesSemImage({ colorMode }) {
                   link="tel:11964115298"
                   label="Emergência? Ligue agora!"
                   colorMode={colorMode}
-                  bgClass="bg-[#ff2c2c]"
-                  className="text-black"
+                  className="text-white bg-red-800"
                 />
               </div>
             </motion.div>
