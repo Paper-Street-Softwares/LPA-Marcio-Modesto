@@ -31,7 +31,11 @@ function FeaturesSemImage({ colorMode }) {
       textDestaque = 'text-primaryDark'
   }
   return (
-    <SectionArea id="feature" className={`${backgroundMode}`}>
+    <SectionArea
+      paddingbot={false}
+      id="feature"
+      className={`${backgroundMode}`}
+    >
       <SectionWrapper>
         <section className="relative font-mainFont">
           <div className="container mx-auto">
