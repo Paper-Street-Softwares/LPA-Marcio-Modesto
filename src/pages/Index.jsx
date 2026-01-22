@@ -45,7 +45,7 @@ export default function Index() {
           <HeroTemplateNovo colorMode={colorMode} />
           {/* Lazy sections */}
           <Suspense fallback={null}>
-            <EmergencyTemplate />
+            <EmergencyTemplate colorMode="light" />
             {/* <FeaturesNovaTemplate colorMode={colorMode} /> */}
             <FeaturesSemImage colorMode={colorMode} />
             <AuthorityTemplate colorMode={colorMode} />

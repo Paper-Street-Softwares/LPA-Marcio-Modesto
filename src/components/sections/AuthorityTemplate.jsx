@@ -68,7 +68,7 @@ export function AuthorityTemplate({ colorMode }) {
                       initial={{ opacity: 0, y: 10 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
-                      className={`text-sm font-bold tracking-wides uppercase block ${textDestaque}`}
+                      className={`text-sm font-bold tracking-wides uppercase block font-secondFont ${textDestaque}`}
                     >
                       Diferenciais do Atendimento
                     </motion.span>
@@ -86,7 +86,7 @@ export function AuthorityTemplate({ colorMode }) {
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
                       transition={{ delay: 0.2 }}
-                      className={`text-lg leading-relaxed border-l-2 ${borderSVG}  pl-6 ${textOpacity}`}
+                      className={`text-lg leading-relaxed border-l-2 ${borderSVG} font-secondFont pl-6 ${textOpacity}`}
                     >
                       Atendimento direto com advogado criminalista experiente,
                       com atuação estratégica desde a fase policial até o
@@ -109,7 +109,9 @@ export function AuthorityTemplate({ colorMode }) {
                         >
                           <item.icon className="w-5 h-5" />
                         </div>
-                        <span className={`font-bold text-lg ${textOpacity}`}>
+                        <span
+                          className={`font-bold text-lg font-secondFont ${textOpacity}`}
+                        >
                           {item.text}
                         </span>
                       </motion.div>
