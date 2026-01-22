@@ -63,7 +63,7 @@ function AboutNovoTemplate({ ButtonModal, colorMode }) {
   return (
     <SectionArea id="about" className={`${backgroundMode}`}>
       <SectionWrapper>
-        <section className="w-full relative overflow-hidden">
+        <section className="w-full relative">
           <div className="container mx-auto relative z-10">
             <div className="grid lg:grid-cols-2 gap-4 desktop1:gap-16 items-center">
               {/* Conteúdo textual */}
