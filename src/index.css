@@ -174,3 +174,13 @@ body {
 .p-dialog-header {
   padding-bottom: 0px;
 }
+
+@layer components {
+  [data-theme='light'] .destaque {
+    @apply text-primaryDark;
+  }
+
+  [data-theme='dark'] .destaque {
+    @apply text-primaryLight;
+  }
+}

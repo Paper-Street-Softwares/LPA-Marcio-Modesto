@@ -109,17 +109,35 @@ const content = {
     },
     hero: {
       miniTag: 'ADVOGADO CRIMINALISTA 24H EM SÃO PAULO E REGIÃO',
-      FirstPartTitle: 'Precisa de um Advogado',
-      DestaquePartTitle: (
-        <p>
-          <span className="italic relative inline-block">Criminalista</span>
-        </p>
+      title: (
+        <h1>
+          Advogado Criminalista em São Paulo – Atendimento{' '}
+          <span className="destaque relative italic font-light">
+            Imediato
+            <span>
+              <svg
+                className="hero-underline absolute bottom-0 left-0 w-full h-3 text-primaryLight"
+                viewBox="0 0 100 10"
+                preserveAspectRatio="none"
+              >
+                <path
+                  d="M0 5 Q 50 10 100 5"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  fill="none"
+                />
+              </svg>
+            </span>
+          </span>{' '}
+          24h
+        </h1>
       ),
-      SecondPartTitle: '?',
       subtitle: (
         <p>
-          Dr. Márcio Modesto é Especialista em Direito Penal e Direito
-          Processual Penal, com grande experiência em todo o Brasil.
+          Atuação urgente em casos de prisão em flagrante, audiência de
+          custódia, <i>Habeas Corpus</i>, liberdade provisória e medidas
+          emergenciais. Defesa rápida, estratégica e sigilosa desde o primeiro
+          momento.
         </p>
       ),
       heroDefaultImage: heroDefaultImg, // img da pessoa mobile
@@ -131,7 +149,7 @@ const content = {
       obsHero: {
         icon: <LucideIdCard />,
         iconTwo: <LucideIdCard />,
-        text: 'Atendimento imediato para prisão em flagrante, audiência de custódia, Lei Seca, Habeas Corpus e diligências urgentes, incluindo busca e apreensão e intimações.',
+        text: 'Atendimento imediato 24h.',
         textTwo: '',
       },
       secondaryCta: 'Contato',
@@ -159,7 +177,10 @@ const content = {
       FirstPartTitle: 'Atuação em',
       DestaquePartTitle: (
         <p>
-          <span className="italic relative inline-block"> Direito Penal</span>{' '}
+          <span className="italic relative inline-block">
+            {' '}
+            Direito Penal
+          </span>{' '}
         </p>
       ),
       SecondPartTitle: '',

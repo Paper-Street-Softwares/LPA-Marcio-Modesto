@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef, useState } from 'react'
 import { Button } from '../interactives/ButtonNovoTemplate'
 import { motion } from 'framer-motion'
 import {
@@ -13,6 +13,7 @@ import SectionArea from '../sectionElements/SectionArea'
 import SectionWrapper from '../sectionElements/SectionWrapper'
 import ButtonReflexo from '../interactives/ButtonReflexo'
 import ButtonAlert from '../interactives/ButtonAlert'
+import { useColorMode } from '../../context/UseContextArchive'
 
 function HeroTemplateNovo({
   colorMode,
@@ -66,13 +67,16 @@ function HeroTemplateNovo({
       borderColor = 'border-white'
   }
 
+  const { showGlobalButton } = useColorMode()
+
   return (
     <SectionArea
+      data-theme={colorMode}
       id="home"
       paddingTopAndBottom={false}
       className={`${backgroundMode}`}
     >
-      <section className="relative min-h-[90vh] w-full pt-[120px] pb-[70px] phone3:pt-[130px] tablet1:pt-[170px] desktop1:pt-[180px] flex items-center justify-center overflow-hidden font-mainFont">
+      <section className="relative min-h-[90vh] w-full pt-[120px] pb-[70px] phone3:pt-[130px] tablet1:pt-[170px] desktop1:pt-[150px] desktop2:pt-[180px] flex items-center justify-center overflow-hidden font-mainFont">
         {/* Abstract Background Shapes */}
         <div
           className={`absolute top-0 right-[-10px] h-full w-[80%] -skew-x-12 translate-x-2/4 z-0 ${bgFaixaHero}`}
@@ -88,7 +92,7 @@ function HeroTemplateNovo({
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, ease: 'easeOut' }}
-              className="space-y-8 order-2 lg:order-1 flex flex-col items-start desktop1:items-start"
+              className="space-y-8 order-2 lg:order-1 flex flex-col items-start desktop1:items-start "
             >
               <div
                 className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full border shadow-sm text-xs font-secondFont font-bold tracking-wide uppercase ${bgMinitag}`}
@@ -99,49 +103,14 @@ function HeroTemplateNovo({
                 {content.texts.hero.miniTag}
               </div>
 
-              <h2
-                className={`text-start desktop1:text-start text-4xl md:text-5xl lg:text-7xl font-medium leading-[1.1] tracking-tight flex flex-wrap gap-2 ${text}`}
+              <h1
+                // className={` desktop1:text-start w-full text-4xl md:text-5xl lg:text-5xl font-medium leading-[1.1] ${text} `}
+                className={` desktop1:text-start w-full text-[34px] phone3:text-4xl md:text-5xl lg:text-4xl xl:text-5xl font-medium leading-[1.1] ${text} `}
               >
-                {content.texts.hero.FirstPartTitle}
-                <div className="flex flex-wrap ">
-                  {' '}
-                  <span className={`${textDestaque} relative inline-block`}>
-                    {content.texts.hero.DestaquePartTitle}
-
-                    {colorMode === 'dark' ? (
-                      <svg
-                        className="absolute -bottom-1 left-0 w-full h-3"
-                        viewBox="0 0 100 10"
-                        preserveAspectRatio="none"
-                      >
-                        <path
-                          d="M0 5 Q 50 10 100 5"
-                          stroke="#292929"
-                          strokeWidth="2"
-                          fill="none"
-                        />
-                      </svg>
-                    ) : (
-                      <svg
-                        className="absolute -bottom-1 left-0 w-full h-3"
-                        viewBox="0 0 100 10"
-                        preserveAspectRatio="none"
-                      >
-                        <path
-                          d="M0 5 Q 50 10 100 5"
-                          stroke="#AFAFAF"
-                          strokeWidth="2"
-                          fill="none"
-                        />
-                      </svg>
-                    )}
-                  </span>
-                  {content.texts.hero.SecondPartTitle}
-                </div>
-              </h2>
-
+                {content.texts.hero.title}
+              </h1>
               <p
-                className={`text-start desktop1:text-start text-lg md:text-xl leading-relaxed max-w-lg font-secondFont font-light ${textOpacity}`}
+                className={`text-start desktop1:text-start text-lg md:text-xl leading-relaxed max-w-lg font-secondFont font-extralight ${textOpacity}`}
               >
                 {content.texts.hero.subtitle}
               </p>
@@ -162,13 +131,16 @@ function HeroTemplateNovo({
                   link={content.texts.links.ctaWhatsapp}
                   label={content.texts.hero.ctaButtonText}
                   colorMode={colorMode}
+                  className="my-0"
                 />
                 <ButtonReflexo
+                  id="ligar"
                   icon={<Phone width={20} />}
-                  link="tel:11964115298"
+                  link={`tel:${content.texts.infos.phone}`}
                   label="Emergência? Ligue agora!"
                   colorMode={colorMode}
-                  className="text-white bg-red-800"
+                  bgClass="bg-[#ff2c2c]"
+                  className="text-white"
                 />
               </div>
               {/* <hr
@@ -195,7 +167,7 @@ function HeroTemplateNovo({
               className="relative order-1 lg:order-2"
             >
               <div
-                className={`relative rounded-[2.5rem] overflow-hidden aspect-[3/4] md:aspect-[4/5] shadow-2xl lg:aspect-[3/4] ring-1 ring-black/5 bg-gray-100 ${image}`}
+                className={`relative rounded-[2.5rem] overflow-hidden aspect-[4/4] md:aspect-[4/4] shadow-2xl lg:aspect-[4/4] ring-1 ring-black/5 bg-gray-100 ${image}`}
               >
                 <img
                   src={content.texts.hero.heroDefaultImage}
@@ -209,64 +181,40 @@ function HeroTemplateNovo({
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
 
                 {/* Floating Card */}
-                <motion.div
-                  initial={{ y: 20, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  transition={{ delay: 0.6 }}
-                  className={`absolute bottom-8 left-6 right-6 md:left-8 md:right-8  backdrop-blur-md p-4 phone3:p-4 rounded-2xl shadow-lg border ${borderColor} z-10 ${bgAlertHero}`}
-                >
-                  <div className="flex items-center gap-4 phone3:gap-5 ">
-                    {/* <div className="flex-shrink-0 w-8 h-8 phone3:w-12 phone3:h-12 bg-secondary rounded-full flex items-center justify-center text-primaryDark">
-                      <AlertTriangle className="w-4 h-4 phone3:w-6 phone3:h-6" />
-                    </div> */}
-                    <div>
-                      <p
-                        className={`text-paragraph1 phone3:text-xs font-secondFont font-bold ${textDestaque} tracking-widest uppercase mb-1`}
-                      >
-                        PLANTÃO 24H
-                      </p>
-                      <p
-                        className={`text-paragraph2 phone3:text-paragraph4 font-secondFont font-medium text-opacity-80 leading-none ${text}`}
-                      >
-                        Prisão em Flagrante, Custódia, Habeas Corpus, Busca e
-                        Apreensão, Intimações
-                      </p>
-                    </div>
-                    <div className="ml-auto">
-                      <ButtonReflexo
-                        padding="p-2 phone3:p-4"
-                        icon={
-                          <Phone className="w-4 h-4 tablet1:w-6 tablet1:h-6 text-white" />
-                        }
-                        link="tel:11964115298"
-                        className="bg-red-800"
-                      />
-                    </div>
-                  </div>
-                </motion.div>
-              </div>
-
-              {/* Decorative elements */}
-              <div className="absolute -top-12 -right-12 w-64 h-64 bg-accent/10 rounded-full blur-3xl -z-10" />
-              <div className="absolute -bottom-6 -right-6 text-primaryDark/10 hidden md:block">
-                <svg
-                  width="120"
-                  height="120"
-                  viewBox="0 0 100 100"
-                  fill="currentColor"
-                >
-                  <pattern
-                    id="dots"
-                    x="0"
-                    y="0"
-                    width="20"
-                    height="20"
-                    patternUnits="userSpaceOnUse"
+                {showGlobalButton && (
+                  <motion.div
+                    id="ligar"
+                    initial={{ y: 20, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ delay: 0.6 }}
+                    className={`absolute bottom-8 left-6 right-6 md:left-8 md:right-8  backdrop-blur-md p-4 phone3:p-4 rounded-2xl shadow-lg border ${borderColor} z-10 ${bgAlertHero}`}
                   >
-                    <circle cx="2" cy="2" r="2" />
-                  </pattern>
-                  <rect width="100" height="100" fill="url(#dots)" />
-                </svg>
+                    <div className="flex items-center gap-4 phone3:gap-5 ">
+                      <div>
+                        <p
+                          className={`text-[9px] phone2:text-xs font-secondFont font-bold ${textDestaque} tracking-widest uppercase mb-1`}
+                        >
+                          Plantão 24h
+                        </p>
+                        <p
+                          className={`text-paragraph2 phone3:text-lg font-mainFont font-bold leading-none ${text}`}
+                        >
+                          Emergência? Ligue agora.
+                        </p>
+                      </div>
+                      <div className="ml-auto">
+                        <ButtonAlert
+                          padding="p-2 phone3:p-4"
+                          icon={
+                            <Phone className="w-4 h-4 tablet1:w-6 tablet1:h-6 text-white" />
+                          }
+                          link={`tel:${content.texts.infos.phone}`}
+                          className="bg-red-700"
+                        />
+                      </div>
+                    </div>
+                  </motion.div>
+                )}
               </div>
             </motion.div>
           </div>
